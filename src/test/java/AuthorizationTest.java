@@ -13,13 +13,13 @@ import static manager.DataGenerator.generatePassword;
 
 public class AuthorizationTest {
     @BeforeEach
-    public void setup() {
+    void setup() {
         open("http://localhost:9999");
     }
 
     @Test
     @DisplayName("Should successfully login with active registered user")
-    public void shouldCheckRegisteredActiveUser() {
+    void shouldCheckRegisteredActiveUser() {
         var registeredUser = registerUser("active");
         $("[data-test-id=login] input").setValue(registeredUser.getLogin());
         $("[data-test-id=password] input").setValue(registeredUser.getPassword());
